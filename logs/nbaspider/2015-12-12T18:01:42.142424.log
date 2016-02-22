@@ -1,0 +1,17 @@
+2015-12-12 18:01:42 [scrapy] ERROR: Error caught on signal handler: <bound method ?.spider_idle of <scrapyrt.core.CrawlManager object at 0x10fbbded0>>
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/signal.py", line 26, in send_catch_log
+    *arguments, **named)
+  File "/Library/Python/2.7/site-packages/scrapy/xlib/pydispatch/robustapply.py", line 57, in robustApply
+    return receiver(*arguments, **named)
+  File "/Library/Python/2.7/site-packages/scrapyrt-0.9-py2.7.egg/scrapyrt/core.py", line 193, in spider_idle
+    callback = getattr(self.crawler.spider, self.callback_name)
+AttributeError: 'NBASpider' object has no attribute 'teamname'
+2015-12-12 18:01:42 [scrapy] INFO: Closing spider (finished)
+2015-12-12 18:01:42 [scrapy] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 12, 23, 1, 42, 163069),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 6,
+ 'start_time': datetime.datetime(2015, 12, 12, 23, 1, 42, 161489)}
+2015-12-12 18:01:42 [scrapy] INFO: Spider closed (finished)

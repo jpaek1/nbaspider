@@ -1,0 +1,38 @@
+2015-12-12 20:09:52 [scrapy] DEBUG: Crawled (200) <GET https://sports.yahoo.com/nba/teams/bos/stats/> (referer: None)
+2015-12-12 20:09:52 [scrapy] ERROR: Spider error processing <GET https://sports.yahoo.com/nba/teams/bos/stats/> (referer: None)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/josephpaek/Desktop/scrapy/nba/nba/spiders/nba_spider.py", line 22, in parse
+    max_rows = float(rows.xpath('count(//table[@summary="Team Stats"]/tbody/tr)').extract())
+TypeError: float() argument must be a string or a number
+2015-12-12 20:09:52 [scrapy] INFO: Closing spider (finished)
+2015-12-12 20:09:52 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 234,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 128317,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 13, 1, 9, 52, 302840),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 6,
+ 'log_count/WARNING': 2,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2015, 12, 13, 1, 9, 50, 403606)}
+2015-12-12 20:09:52 [scrapy] INFO: Spider closed (finished)
